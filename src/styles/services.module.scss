@@ -1,0 +1,73 @@
+.services {
+  margin: 2.5%;
+  //border: 1px solid orange;
+}
+
+.services::before {
+  display: block;
+  content: "";
+  margin-top: -80px;
+  height: 80px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  //border: 1px solid blue;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items#Creating_gutters_between_items */
+  margin: -15px;
+}
+
+img {
+  width: 100px;
+  height: 80px;
+}
+
+.card {
+  margin: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  //border: 1px dashed green;
+}
+
+.card-body > * {
+  text-align: center;
+}
+
+.card-body > h3 {
+  font-size: 1.3rem;
+  margin-top: 1.3em;
+  margin-bottom: 1.2em;
+  letter-spacing: .03em;
+}
+
+.card-body > p {
+  margin-top: 1em;
+  font-size: 1.03rem;
+  font-weight: 400;
+  //font-family: "CartoGothic Std", "Liberation Sans", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 55em) {
+  .cards {
+    //margin: 0 0 8em;
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 0 0 30%;
+  }
+}

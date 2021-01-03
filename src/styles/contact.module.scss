@@ -1,0 +1,70 @@
+.contact {
+  margin: 2.5%;
+  //border: 1px solid orange;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-inner {
+  display: flex;
+  flex-flow: row wrap;
+  //border: 1px solid blue;
+}
+
+.col-left p {
+  margin-top: 0;
+  margin-bottom: .6em;
+}
+
+.col-left > h3 {
+  margin-top: 0;
+  margin-bottom: 1.6em;
+}
+
+.col-right > h3 {
+  margin-top: 0;
+}
+
+.col-left,
+.col-right {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.profile-pic {
+  margin: 2em 0;
+}
+
+.col-left svg {
+  margin-right: 8px;
+  margin-left: -1px;
+}
+
+@media (min-width: 52em) {
+  .col-left {
+    flex: 0 0 30%;
+  }
+  
+  .col-right {
+    flex: 0 0 70%;
+  }
+}
+
+.profile-pic > img {
+  border-radius: 50%;
+  border: 1px solid #aca073;
+  border: 1px solid #d9cc9d;
+  width: 230px;
+  height: 230px;
+  margin-top: 1.5em;
+}
+
+@media (min-width: 55em) {
+  .contact {
+    margin: 4em 0;
+  }
+}

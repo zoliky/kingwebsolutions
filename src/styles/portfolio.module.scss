@@ -1,0 +1,140 @@
+.portfolio {
+  margin: 2.5%;
+  //border: 1px solid orange;
+}
+
+.cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    color: #1695A3;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  min-height: 200px;
+  //border: 1px solid blue;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items#Creating_gutters_between_items */
+  margin: -4px;
+}
+
+.card {
+  width: 385px;
+  position: relative;
+  perspective: 1000px;
+  margin: 4px;
+}
+
+.item {
+  transform: translateZ(-40px);
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.item-side {
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+  position: relative;
+  min-height: 300px;
+}
+
+.item-side-front {
+  width: 100%;
+  height: 100%;
+}
+
+.item-side-back {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(-180deg);
+  padding: .2em 1em 4.8em;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.item-back-descr {
+  height: 100%;
+  flex: 1 0 auto;
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+
+.item-img {
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.item:hover {
+  transform: translateZ(0px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.active {
+  transform: translateZ(0) rotateY(180deg) !important;
+}
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 1em;
+  line-height: 1.5em;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #fff;
+  border-radius: .25rem;
+  letter-spacing: .05em;
+  padding: .375em .75em;
+  font-family: inherit;
+  background-color: #136480;
+  border: 1px solid transparent;
+  transition: transform ease-in-out 250ms;
+  box-shadow: -4px 3px 8px -3px rgba(0, 0, 0, .5);
+}
+
+/* Tablet */
+@media (min-width: 40em) {
+  .cards-container {
+    max-width: 900px;
+  }
+
+  .card {
+    //margin: 0 15px 0;
+    margin: 0 6px 0;
+    width: 385px;
+    min-height: 100%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 70em) {
+  .cards-container {
+    max-width: 1200px;
+  }
+
+  .card {
+    margin: 0 6px 0;
+    width: 385px;
+  }
+
+  .cards {
+    margin-bottom: 1em;
+  }
+}

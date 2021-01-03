@@ -1,0 +1,147 @@
+/* ---------------------------------------------------------------------------
+             FILE: navbar.module.scss
+      DESCRIPTION: Navbar styles
+           AUTHOR: Zoltán Király <zoliky@gmail.com>
+----------------------------------------------------------------------------*/
+
+.menu-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.hamburger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 0.5626em;
+  transition: all .4s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  content: "";
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Hamburger navigation */
+.nav.is-open .hamburger {
+  background: rgba(0, 0, 0, 0);
+}
+
+.nav.is-open .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav.is-open .hamburger::after {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+/* Menu dropdown */
+.menu-dropdown {
+  position: absolute;
+  height: 0;
+  top: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #1695a3;
+  transition: height 0.3s ease-out;
+}
+
+.nav-menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    line-height: 1;
+  }
+
+  li + li {
+    margin-top: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  li > a {
+    display: block;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.8em 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #F2F2F0;
+  }
+  
+  li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    height: 2px;
+    background: #F2F2F0;
+    transition:
+      left .4s ease-out,
+      right .4s ease-out;
+  }
+  
+  li > a.active::after,
+  li > a:hover::after {
+    // left: 0;
+    // right: 0;
+  }
+}
+
+@media (min-width: 52em) {
+  .nav-menu {
+    display: flex;
+    position: static;
+    justify-content: center;
+
+    li {
+      margin-left: 2em;
+      line-height: 1.8;
+    }
+    
+    li + li {
+      border-top: initial;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-dropdown {
+    position: initial;
+    overflow: initial;
+    height: auto !important;
+  }
+}

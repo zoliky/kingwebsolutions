@@ -1,0 +1,28 @@
+/* ---------------------------------------------------------------------------
+             FILE: header.module.scss
+      DESCRIPTION: Header styles
+           AUTHOR: Zoltán Király <zoliky@gmail.com>
+----------------------------------------------------------------------------*/
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 52em) {
+  .header-container {
+    display: flex;
+    height: 100%;
+    padding: 0 .5em;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

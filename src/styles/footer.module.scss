@@ -1,0 +1,82 @@
+.footer {
+  background: #468966;
+  padding: 0 1em;
+  color: #fff;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin: 0 auto;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+.link {
+  color: #F2F2F2;
+  font-weight: bold;
+}
+
+.social {
+  list-style: none;
+  padding-left: 0;
+  margin: 2em 0;
+  display: flex;
+  justify-content: center;
+
+  li + li {
+    margin-left: 1em;
+  }
+
+  li > a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    position: relative;
+    transition: color .5s;
+  }
+
+  li > a > svg {
+    margin-left: .2em;
+  }
+
+  a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: -36px;
+  width: 120px;
+  opacity: 0;
+  padding: .5em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-radius: 0.170454545em;
+  visibility: hidden;
+  background: #e8559e;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateY(10px);
+  transition: all .25s ease-out;
+  letter-spacing: .03em;
+  font-family: "CartoGothic Std Bold", "Liberation Sans Bold", Helvetica, Arial, sans-serif;
+}
+
+.tooltip::after {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e8559e;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -13px;
+}
